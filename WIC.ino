@@ -41,6 +41,8 @@ int sensorVals[];    // empty array for analog values from sensors
 int button = 7;    // select the input pin for the massage button
 int massage = 8;    // select the out pin to route to the massage vibrator circuit 
 
+int dispense = 9;    // select the out pin to route to the m&m dispenser circuit 
+
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);    // initialize library with interface pins 
 
 void setup() {
@@ -75,6 +77,7 @@ void loop() {
             lcd.print("Keep it up!");
             // after x amount, m&ms are dispersed 
             delay(300000); // 5 mins
+            digitalWrite(9, HIGH);
         }
       }
     }
